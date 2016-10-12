@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Context reloadable="true">
+
+<Resource name="jdbc/ebookDB" auth="Container" type="javax.sql.DataSource"
+maxActive="100" maxIdle="30" maxWait="10000" removeAbandoned="true"
+
+username="----" password="----" driverClassName="com.mysql.jdbc.Driver" 
+url="jdbc:mysql://localhost:3306/ebookshop?useSSL=false" />
+
+
+
+<Resource name="jdbc/usersDB" auth="Container" type="javax.sql.DataSource"
+maxActive="100" maxIdle="30" maxWait="10000" removeAbandoned="true"
+
+username="----" password="----" driverClassName="com.mysql.jdbc.Driver" 
+url="jdbc:mysql://localhost:3306/users?useSSL=false" />
+
+</Context>
