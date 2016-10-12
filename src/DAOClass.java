@@ -137,7 +137,6 @@ public class DAOClass {
 		ResultSet rset = null;
 		String result = null;
 		boolean isActive;
-		//StringBuffer status = new StringBuffer("OK  ");
 		
 		//jeśli kliknie link aktywacyjny - zatrzymaj linkDestroyer
 		
@@ -172,7 +171,7 @@ public class DAOClass {
 			return e.getMessage();
 		}
 	
-		//status.append("canceling task status: " + nextTask.cancel(true));
+
 		
 		return "OK";
 	}
@@ -180,10 +179,6 @@ public class DAOClass {
 	
 	public String insertNewUser(String username, String email, String password, String uuid) {
 
-		//z czasem: użyć JS do sprawdzenia czy jest ktoś o tym loginie bądź
-		//nazwie użytkownika w bazie danych, na razie sama weryfikacja poprawności
-		
-		//wydelegować do osobnej metody 'verifyInput'
 		boolean usernameOK = validateUsername(username);
 		boolean emailOK = validateEmail(email);
 		boolean passwordOK = validatePassword(password);
@@ -274,7 +269,6 @@ public class DAOClass {
 	//deaktywacja linku	
 	public ScheduledExecutorService initAndRunLinkDestroyer(String username) {
 	
-	//jak tu przechwycić błąd z Runnable ???
 	Runnable destroyActivationLink = new Runnable() {
 	
 		public void run() {
@@ -282,13 +276,8 @@ public class DAOClass {
 				
 			deleteUserStmt.setString(1, username);
 			deleteUserStmt.executeUpdate();	
-			//toReturn = "Print: link expired. User -- " + username + " -- deleted from DB.";
-			//return;
-			
-		} catch (SQLException e) {
-			//toReturn = "Print: linkDestroyer ERROR: " + e.getMessage();
-			//return;
-		}	
+	
+		} catch (SQLException e) {}	
 		
 	  }
 	};

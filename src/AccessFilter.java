@@ -23,11 +23,7 @@ public class AccessFilter implements Filter {
 		String username = null;
 		
 		if(session!=null) username = (String) session.getAttribute("username");
-		
-		/*if(username == null) System.out.println("Print: username = null");
-		if(session == null) System.out.println("Print: session = null");
-		if(!(isAccessibleByDefault(requestPath))) System.out.println
-		  ("Print: not accessible by default: " + requestPath);*/
+
 		
 		if((username == null) && (isNotAccessibleByDefault(requestPath))) {
 			
@@ -50,7 +46,7 @@ public class AccessFilter implements Filter {
 		
 		for(int i = 0; i<accessiblePages.length; i++) {
 			if(requestPath.endsWith(accessiblePages[i])) {
-				//System.out.println("Print: is accessible by default: " +requestPath);
+
 				return false;
 			}
 		}

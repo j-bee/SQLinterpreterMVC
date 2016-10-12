@@ -39,9 +39,6 @@ public class RegistrationServlet extends HttpServlet {
 		String registerStatus = sqlExecutor.insertNewUser(username, email, password, uuid);
 		request.setAttribute("registerStatus", registerStatus);
 		
-		//jeśli kłopot z wysłaniem maila - usuń użytkownika z DB
-		//na razie zakładam że mail będzie działał...
-		
 		if(registerStatus.equals("OK")) {
 			
 			System.out.println("Print: register status - " + registerStatus);

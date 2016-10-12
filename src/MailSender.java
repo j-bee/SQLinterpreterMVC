@@ -38,8 +38,7 @@ public class MailSender
 		+ "Click the link below to complete your registration.\n\n"
 		+ "http://localhost:8080/jdbcMVC/userconfirm?name=" + username + "&id=" + uuid + "&ldHCode=" + ldHCode
 		);
-		
-		//użyć odpowiedniej klasy z API Javy? np. URI.addQueryString()...
+
 		
 		
 		Transport.send(msg);

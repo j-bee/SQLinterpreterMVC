@@ -36,8 +36,7 @@ public class HttpSessionLogger implements HttpSessionListener, ServletContextLis
 		ServletContext servletContext = sce.getServletContext();
 		servletContext.setAttribute("userCounter", new AtomicInteger());
 		System.out.println("Print: initializing userCounter");
-		
-		//czy to jest dobry sposób?
+	
 		Map<Integer, ScheduledExecutorService> linkDestroyerMap = new HashMap<Integer, ScheduledExecutorService>();
 		servletContext.setAttribute("linkDestroyerMap", linkDestroyerMap);
 	}
